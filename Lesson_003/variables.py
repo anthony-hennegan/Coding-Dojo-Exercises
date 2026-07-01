@@ -18,6 +18,7 @@ Instructions:
 # =====================================================
 # Exercise 1 - Create Variables
 # =====================================================
+print("Exercise 1")
 
 # Task:
 # Create three variables and print each one.
@@ -52,6 +53,8 @@ print(favorite_language)
 # =====================================================
 # Exercise 2 - Print Multiple Values
 # =====================================================
+print("")
+print("Exercise 2")
 
 # Task:
 # Replace the three print statements with one print statement.
@@ -60,35 +63,32 @@ print(name, age, favorite_language)
 
 # Questions
 #
-# 1. What changed?
+# What changed?
+# All three values are printed on the same line.
 #
-#    All three values are printed on the same line.
+# Why are the values printed on one line?
+# Because a single print() call prints all of its arguments before
+# appending one newline character.
 #
-# 2. Why are the values printed on one line?
-#
-#    Because a single print() call prints all of its arguments before
-#    appending one newline character.
-#
-# 3. What does print() append by default?
-#
-#    A newline character (\n).
+# What does print() append by default?
+# A newline character (\n).
 
 
 # =====================================================
 # Exercise 3 - Reassign a Variable
 # =====================================================
+print("")
+print("Exercise 3")
 
 # Prediction:
-#
-# Before running this code...
-#
 # What do you think the output will be?
-#
-#   Anthony
-#   Bob
+# Anthony
+# Bob
 #
 # Why?
-#   Python executes from top to bottom.
+# The first print() executes before name is changed to "Bob".
+# After the reassignment, name refers to "Bob", so the second print()
+# outputs Bob.
 
 name = "Anthony"
 
@@ -102,12 +102,20 @@ print(name)
 # =====================================================
 # Exercise 4 - Multiple Reassignments
 # =====================================================
+print("")
+print("Exercise 4")
 
 # Prediction:
 #
 # What will the program print?
+#   Anthony
+#   Bob
+#   Charlie
 #
 # Explain WHY.
+# Python executes one statement at a time from top to bottom.
+# Each print() uses the value that the variable refers to at the
+# moment that statement executes.
 
 name = "Anthony"
 
@@ -125,12 +133,19 @@ print(name)
 # =====================================================
 # Exercise 5 - Independent Variables
 # =====================================================
+print("")
+print("Exercise 5")
 
 # Prediction:
 #
 # What will this print?
-#
+#   Anthony
+#   34
+#   Anthony
+#   35
 # Why doesn't changing age affect name?
+#   Because the name and age variables are independent of each other. 
+#   Changing one does not affect the other.
 
 name = "Anthony"
 age = 34
@@ -148,19 +163,10 @@ print(age)
 # Reflection
 # =====================================================
 
-# What surprised you?
+# Key Takeaways
 #
-#
-#
-# What was confusing?
-#
-#
-#
-# What did you learn?
-#
-#
-#
-# Questions to ask next session:
-#
-#
-#
+# • Python executes statements from top to bottom.
+# • Variables refer to values.
+# • Variables can be reassigned to different values.
+# • Each statement uses the current state of the program when it executes.
+# • print() appends a newline character (\n) by default.
