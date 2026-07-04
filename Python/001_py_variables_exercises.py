@@ -1,7 +1,7 @@
 """
 =====================================================
-Lesson 003 - Python Fundamentals
-Exercise 001 - Variables
+Python Fundamentals
+ Variables
 =====================================================
 
 Objective:
