@@ -1,107 +1,112 @@
 
+print("")
 print("Exercise 1")
-
-user_age = input("How old are you? ")
-print("")
-
-try:
-    user_age = int(user_age)
-    
-    user_age_dict = {
-        "age" : user_age,
-        "data_type" : type(user_age)
-    }
-    
-    print("Age Data")
-    print("---------------")
-    
-    for key, value in user_age_dict.items():
-        print(f"{key}: {value}")
-    
-except ValueError:
-    print("Please type a number.")
-    print("")
-
-
-
-
-    
-print("")
 print("====================")
+print("")
+
+password = "python123"
+
+while True:
+    password_response = input("Enter a password: ")
+    if password_response == password:
+        print("Access granted.")
+        break
+    else:
+        print("Incorrect password. Try again.")
+
+print("")
 print("Exercise 2")
-print("")
-
-item_count = input("How many items would you like? ")
-print("")
-
-try:
-    item_count = int(item_count)
-    if item_count > 0:
-        print(f"{item_count} items.")
-    elif item_count <= 0:
-        print("Quantity must be greater than zero.")
-
-except ValueError:
-    print("Please enter a valid whole number.")
-
-print("")
 print("====================")
+print("")
+
+while True:
+    number_response = input("Enter a number: ")
+    
+    try:
+        number = int(number_response.strip())
+        
+        if number >= 0:
+            print("Accepted")
+            break
+        else:
+            print("Number must be greater than zero.")
+            
+    except ValueError:
+        print("Try again. Please enter a number value.")
+  
+
+print("")
 print("Exercise 3")
-print("")
-
-user_temp_response = input("What is the temperature in Farenheit? ")
-print("")
-
-try:
-    fahrenheit = float(user_temp_response)
-    celcius = (fahrenheit - 32) * 5 / 9
-    print(f"Temperature: {celcius:.2f}C")
-except ValueError:
-    print("Please enter a whole number or decimal.")
-
-
-print("")
 print("====================")
-print("Exercise 4")
 print("")
 
-first_number = input("Enter a number: ")
-second_number = input("Enter another number: ")
-
-try:
-    first_number = int(first_number.strip())
-    second_number = int(second_number.strip())
-    
-    divide_by_first = first_number / second_number
-    
-    print(f"Result: {divide_by_first}")
-    
-except ValueError:
-    print("Please enter a whole number.")
-    
-except ZeroDivisionError:
-    print("The second number cannot be zero.")
-
-print("")
-print("====================")
-print("Exercise 5")
-print("")
-
-products = [
-    "Hammer",
-    "Saw",
-    "Drill",
+menu = [
+    "View Books",
+    "Check Out Book",
+    "Exit"
 ]
-
-for product in products:
-    index = products.index(product)
-    print(f"{index}:{product}")
+print("   Menu")
+print("------------")
+for option in menu:
+    index = menu.index(option)
+    print(f"{index}: {option}")
     
-select_product_response = input("Enter a product number: ")
-try:
-    product_number = int(select_product_response.strip())
-    print(products[product_number])
-except ValueError:
-    print("Please enter a whole number.")
-except IndexError:
-    print("That product does not exist.")
+while True:
+    option_response = input("Choose an option: ")
+    
+    try:
+        chosen_option = int(option_response.strip())
+        
+        if chosen_option in range(len(menu)):
+            selected_item = menu[chosen_option]
+            print(f"You selected: {selected_item}")
+            break
+        else:
+            print("That menu option does not exist.")
+    except ValueError:
+        print("You must enter a number from the menu list.")
+        
+
+print("")
+print("Exercise 4")
+print("====================")
+print("")
+
+while True:
+    items_count_response = input("How many items would you like? ")
+    try:
+        item_count = int(items_count_response.strip())
+        if 0 < item_count <= 20:
+            print("Order accepted.")
+            break
+        else:
+            print("Quantity must be between 1 and 20")
+       
+    
+    except ValueError:
+        print("Please enter a whole number.")
+
+
+print("")
+print("Exercise 5")
+print("====================")
+print("")
+
+balance = 150.00
+
+while True:
+    withdrawl_response = input("Enter withdrawl amount: ")
+    try:
+        withdrawl_amount = float(withdrawl_response.strip())
+        if withdrawl_amount > 0 and withdrawl_amount <= balance:
+            balance -= withdrawl_amount
+            print("Withdrawl accepted")
+            print(f"Balance: {balance:.2f}")
+            break
+        elif withdrawl_amount > balance:
+            print("Insufficient funds.")
+        else:
+            print("Withdrawl amount must be greater than zero")
+            
+    except ValueError:
+        print("Please enter a valid amount.")
